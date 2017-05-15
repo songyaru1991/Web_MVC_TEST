@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+
+    @using (Html.BeginForm("Edit", "Home", FormMethod.Post))  //表单
+    {       
+        @Html.TextBox("UserName", "宋亚茹", new { width = "100px" })
+
+        @Html.Password("pwd")
+
+        @Html.RadioButton("sex", "男")<span>男</span>
+        @Html.RadioButton("sex", "女")<span>女</span>
+        
+        @Html.DropDownList("grade","--请选择--")
+
+        @Html.ActionLink("点击", "About")
+
+        <input type="checkbox" name="hobby" value="游泳"/><span>游泳</span>
+        <input type="checkbox" name="hobby" value="打球" /><span>打球</span>
+        <input type="checkbox" name="hobby" value="射箭"/><span>射箭</span> 
+                   
+        <input type="submit" value="提交" />                                    
+    }
+
+
+</div>

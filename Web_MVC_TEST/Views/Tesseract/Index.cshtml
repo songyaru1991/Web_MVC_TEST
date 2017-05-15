@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    @Scripts.Render("~/bundles/tesseract")
+    <script src="~/Scripts/uploadpreview.js" type="text/javascript"></script>
+    <script src="~/Scripts/Test-tesseract.js" type="text/javascript"></script>
+    <script src="~/Scripts/FileSaver.js" type="text/javascript"></script>
+
+<br />
+<br />
+    <form id="myForm" role="form" action="/Tesseract/FileUpload" enctype="multipart/form-data" method="post">
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <ul id="warp">
+                            <li>
+                                <input type="file" id="up_img_WU_FILE_0" name="uploadFile" multiple="multiple" class="btn-default" />
+                                <img id="imgShow_WU_FILE_0" />                               
+                                <input id="getChinese" type="button" value="获取文字" class="btn btn-primary" />
+                                <textarea id="ChiTextArea" rows="10" cols="80" wrap="hard"></textarea>
+                            </li>
+                            <li>
+                                <input type="file" id="up_img_WU_FILE_1" multiple="multiple" />
+                                <img id="imgShow_WU_FILE_1" />
+                                <input id="getEnglish" type="button" value="获取英文" class="btn btn-primary" />
+                                <textarea id="EngTextArea" rows="10" cols="80"></textarea>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="上传图片" class="btn-default" /></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+

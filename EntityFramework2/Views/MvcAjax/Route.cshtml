@@ -1,0 +1,21 @@
+﻿@model List<string>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Route</title>
+</head>
+<body>
+    <div>
+        @foreach (var item in Model)
+        {
+            @item.ToString()
+        }
+    </div> 
+</body>
+</html>

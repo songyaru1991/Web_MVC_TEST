@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "ViewDataViewBag";
+}
+
+<h2>ViewDataViewBag</h2>
+
+<div>
+    @{
+        //当传过来的数据是强类型数据(对象)时,ViewData需要数据类型转换，VieBag不需要。传基本数据类型时无此问题
+        MvcPassValue.Models.Student viewDataStu = (MvcPassValue.Models.Student)@ViewData["stu"];
+        MvcPassValue.Models.Student viewBagStu = @ViewBag.stu;               
+    }
+    @viewDataStu.SName
+    @viewBagStu.SName
+</div>

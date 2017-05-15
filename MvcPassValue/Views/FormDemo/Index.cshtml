@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <form action="/FormDemo/getStudentDemo3" method="post">
+        <table>
+            <tr><td>姓名:</td><td><input type="text" name="SName" /></td></tr>
+            <tr><td>性别:</td><td><input type="radio" name="sex" value="男" />男&nbsp;&nbsp;<input type="radio" name="sex" value="女" />女</td></tr>
+            <tr>
+                <td>兴趣:</td>
+                <td>
+                    <input type="checkbox" name="inte" value="乒乓球" />乒乓球<input type="checkbox" name="inte" value="羽毛球" />羽毛球
+                    <input type="checkbox" name="inte" value="游泳" />游泳
+                </td>
+            </tr>
+            <tr><td><input type="submit" value="提交" /></td></tr>
+        </table>
+    </form>
+</div>

@@ -1,0 +1,26 @@
+﻿@model EntityFramework1.Models.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        <form action="/Home/EditProduct">
+            <table>
+                <tr><td>产品名:</td><td><input type="text" name="PName" value="@Model.PName"/><input type="hidden" name="Pid" value="@Model.Pid"/></td></tr>
+                <tr><td>价格:</td><td><input type="text" name="Price" value="@Model.Price"/></td></tr>
+                <tr><td><input type="submit" value="修改" /></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+

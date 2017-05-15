@@ -1,0 +1,46 @@
+﻿@model List<string>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script>
+        function show() {
+            var info = "";
+            $.post("/MvcAjax/show", "", function (list) {
+                for (var i = 0; i < list.length; i++)
+                {
+                    info += list[i].Pid + " " + list[i].PName;
+                    $("#div1").html(info);
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div> 
+        <div id="div1">div1</div>      
+        <a onclick="show()" href="#">jquery ajax</a>
+        <br />
+        @Ajax.ActionLink("ajax之ActionLink", "getContent", new AjaxOptions {HttpMethod="post",UpdateTargetId="div1" ,InsertionMode=InsertionMode.InsertBefore})     
+
+        @using(Ajax.BeginForm("Add", new AjaxOptions { HttpMethod = "post", UpdateTargetId = "div1", InsertionMode = InsertionMode.Replace })){
+            <table>
+                <tr><td><span>ajax之表单应用</span></td></tr>
+                <tr><td>产品名称</td><td>@Html.TextBox("PName")</td></tr>
+                <tr><td><input type="submit" value="Ajax表单提交" /></td></tr>
+            </table>
+        }
+     </div>
+
+    <div>
+        @Html.ActionLink("ActionLink", "Route", "MvcAjax", new { year = "1991", month = "01", day = "01" }, new { })
+    </div>
+</body>
+</html>

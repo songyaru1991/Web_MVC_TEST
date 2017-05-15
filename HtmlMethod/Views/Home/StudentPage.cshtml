@@ -1,0 +1,29 @@
+﻿@model HtmlMethod.Models.StudentWithCheck
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StudentPage</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+
+    <div>
+        <form action="/Home/AddStu">
+            <table>
+                <tr><td>姓名:</td><td>@Html.TextBoxFor(p => p.SName)@Html.ValidationMessageFor(p => p.SName)</td></tr>
+                <tr><td>年龄:</td><td>@Html.TextBoxFor(p => p.Age)@Html.ValidationMessageFor(p => p.Age)</td></tr>
+                <tr><td>性别:</td><td><input type="radio" value="男" name="sex" /> 男 <input type="radio" value="女" name="sex" /> 女
+                <tr><td>地址:</td><td>@Html.TextBoxFor(p => p.Address)@Html.ValidationMessageFor(p => p.Address)</td></tr>
+                <tr><td>Email:</td><td>@Html.TextBoxFor(p => p.Email)@Html.ValidationMessageFor(p => p.Email)</td></tr>
+                <tr><td><input type="submit" value="提交" /></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

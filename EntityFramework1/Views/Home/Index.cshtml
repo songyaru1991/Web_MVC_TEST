@@ -1,0 +1,32 @@
+﻿@model List<EntityFramework1.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <br />
+        <form action="/Home/Search">产品名:<input type="text" name="PName" /><input type="submit" value="查询"/></form>
+        <a href="/Home/Add">添加</a>
+        <table>
+            <tr><td>产品名</td><td>价格</td><td>操作</td></tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PName</td>
+                    <td>@item.Price</td>
+                    <td><a href="/Home/Del/@item.Pid" onclick="return confirm('确认删除?')">删除</a><a href="/Home/Edit/@item.Pid">修改</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
